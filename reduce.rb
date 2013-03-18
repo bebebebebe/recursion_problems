@@ -1,19 +1,21 @@
+# "Implement reduce; then implement map and filter in terms of reduce."
+
 
 class Array
 
   def my_reduce(start, &block)
-    if self == []
+    if empty?
       start
-    else self.drop(1).my_reduce(yield(start, self.first), &block)
+    else drop(1).my_reduce(yield(start, first), &block)
     end
   end
 
   def my_map
-    self.my_reduce([]) { |x, y| x << yield(y) }
+    my_reduce([]) { |x, y| x << yield(y) }
   end
 
   def my_filter
-    self.my_reduce([]) { |x, y| yield(y) ? x << y : x }
+    my_reduce([]) { |x, y| yield(y) ? x << y : x }
   end
 
 end
