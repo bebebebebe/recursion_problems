@@ -1,4 +1,4 @@
-# "Implement reduce; then implement map and filter in terms of reduce."
+# "Implement reduce; then implement map and filter in terms of your reduce."
 
 
 class Array
